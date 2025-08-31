@@ -4,13 +4,13 @@ This project clusters and recommends **Telugu songs** based on audio features us
 
 ---
 
-## 🔍 Problem Statement
+## Problem Statement
 
 People often associate music with emotions. Most recommendation systems rely on explicit user preferences or genres. This project focuses on clustering songs based on **audio characteristics** to capture their underlying mood, enabling a more **emotionally-driven music exploration**.
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
 1. Preprocess and clean a dataset of Telugu songs.  
 2. Scale and cluster songs using **KMeans++** based on audio features.  
@@ -23,7 +23,7 @@ People often associate music with emotions. Most recommendation systems rely on 
 
 ---
 
-## 🧪 Prework: Experiments & Learnings
+## Prework: Experiments & Learnings
 
 ### 1. Why Unsupervised Learning?
 - No predefined mood labels were available.  
@@ -51,7 +51,7 @@ People often associate music with emotions. Most recommendation systems rely on 
 
 ---
 
-## ⚙️ Data Preprocessing
+## Data Preprocessing
 
 1. **Duration Handling:** Converted mm:ss → seconds  
 2. **Missing Values:** Dropped rows with invalid durations  
@@ -59,7 +59,7 @@ People often associate music with emotions. Most recommendation systems rely on 
 4. **Scaling:** Standardized with **StandardScaler** (zero mean, unit variance)
 ---
 
-## 📈 Mood Clustering
+## Mood Clustering
 
 ### 1. Elbow Method
 - Plotted inertia vs number of clusters → k=5 chosen as optimal  
@@ -79,7 +79,7 @@ People often associate music with emotions. Most recommendation systems rely on 
 
 ---
 
-## 🌐 Streamlit Web App
+## Streamlit Web App
 
 **Features:**
 - Select mood from dropdown  
@@ -90,9 +90,11 @@ People often associate music with emotions. Most recommendation systems rely on 
 
 UI mimics a realistic music exploration website.
 
+
+
 ---
 
-## 📁 Dataset Overview
+## Dataset Overview
 
 - **Name:** `telugu_songs.csv`  
 - **Source:** [Kaggle - Spotify Indian Languages Dataset](https://www.kaggle.com/datasets/gayathripullakhandam/spotify-indian-languages-datasets?select=Telugu_songs.csv)  
@@ -101,7 +103,7 @@ UI mimics a realistic music exploration website.
 
 ---
 
-## 🗂️ Folder Structure & Workflow
+## Folder Structure & Workflow
 
 <img width="605" height="566" alt="image" src="https://github.com/user-attachments/assets/adf1099d-d709-4668-810b-1739ffc120f6" />
 
@@ -117,7 +119,35 @@ UI mimics a realistic music exploration website.
 
 ---
 
-## 🚀 How to Run
+## Tech Stack
+
+- **Python**
+- **Pandas**
+- **Scikit-learn**
+- **Streamlit**
+
+---
+
+## How It Works
+
+1. Audio features of songs are scaled and clustered using **KMeans++**.  
+2. Each cluster is analyzed and labeled with a corresponding **mood**.  
+3. Users can interactively explore songs through the **Streamlit web app**, filtering by mood, singer, or popularity, and searching by song names.
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/0d0089dc-8cc1-4639-9515-3e6cc57401a2" />
+
+
+---
+
+## Features
+
+- Mood-based song recommendations
+- Song filtering and sorting
+- Partial match search for song names
+- Support for future multi-language datasets
+
+---
+## How to Run
 
 1. Install requirements:
 
@@ -132,33 +162,7 @@ streamlit run app.py
 
 ---
 
-## 🛠️ Tech Stack
-
-- **Python**
-- **Pandas**
-- **Scikit-learn**
-- **Streamlit**
-
----
-
-## 📌 How It Works
-
-1. Audio features of songs are scaled and clustered using **KMeans++**.  
-2. Each cluster is analyzed and labeled with a corresponding **mood**.  
-3. Users can interactively explore songs through the **Streamlit web app**, filtering by mood, singer, or popularity, and searching by song names.
-
----
-
-## ⚡ Features
-
-- Mood-based song recommendations
-- Song filtering and sorting
-- Partial match search for song names
-- Support for future multi-language datasets
-
----
-
-## 🧠 Key Learnings
+## Key Learnings
 
 - KMeans++ is efficient and interpretable for audio clustering  
 - Standardization & feature selection impact clustering quality  
@@ -167,7 +171,7 @@ streamlit run app.py
    
 ---
 
-## 📌 Future Enhancements
+## Future Enhancements
 
 - Add multi-language support with a unified UI  
 - Integrate Spotify API for real-time streaming & previews  
