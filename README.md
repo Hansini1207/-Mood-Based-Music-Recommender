@@ -51,6 +51,14 @@ People often associate music with emotions. Most recommendation systems rely on 
 
 ---
 
+## ⚙️ Data Preprocessing
+
+1. **Duration Handling:** Converted mm:ss → seconds  
+2. **Missing Values:** Dropped rows with invalid durations  
+3. **Feature Selection:** `duration`, `danceability`, `acousticness`, `energy`, `liveness`, `loudness`, `speechiness`, `tempo`, `mode`, `key`, `Valence`, `time_signature`, `popularity`  
+4. **Scaling:** Standardized with **StandardScaler** (zero mean, unit variance)
+---
+
 ## 📈 Mood Clustering
 
 ### 1. Elbow Method
@@ -84,15 +92,6 @@ UI mimics a realistic music exploration website.
 
 ---
 
-## ⚙️ Data Preprocessing
-
-1. **Duration Handling:** Converted mm:ss → seconds  
-2. **Missing Values:** Dropped rows with invalid durations  
-3. **Feature Selection:** `duration`, `danceability`, `acousticness`, `energy`, `liveness`, `loudness`, `speechiness`, `tempo`, `mode`, `key`, `Valence`, `time_signature`, `popularity`  
-4. **Scaling:** Standardized with **StandardScaler** (zero mean, unit variance)
-
----
-
 ## 📁 Dataset Overview
 
 - **Name:** `telugu_songs.csv`  
@@ -102,24 +101,10 @@ UI mimics a realistic music exploration website.
 
 ---
 
-## 🧠 Key Learnings
-
-- KMeans++ is efficient and interpretable for audio clustering  
-- Standardization & feature selection impact clustering quality  
-- Clustering allows mapping songs to moods without labeled data  
-- Frontend UX is crucial: clear mood labels, song titles, and filtering options improve usability  
-
----
-
-## 📌 Future Enhancements
-
-- Add multi-language support with a unified UI  
-- Integrate Spotify API for real-time streaming & previews  
-- Store user mood selections to create personalized recommendations  
-
----
-
 ## 🗂️ Folder Structure & Workflow
+
+<img width="605" height="566" alt="image" src="https://github.com/user-attachments/assets/adf1099d-d709-4668-810b-1739ffc120f6" />
+
 
 | Step | File | Purpose |
 |------|------|--------|
@@ -138,8 +123,56 @@ UI mimics a realistic music exploration website.
 
 ```bash
 pip install -r requirements.txt
-
+```
 2. Run the Streamlit app:
 
 ```bash
 streamlit run app.py
+```
+
+---
+
+## 🛠️ Tech Stack
+
+- **Python**
+- **Pandas**
+- **Scikit-learn**
+- **Streamlit**
+
+---
+
+## 📌 How It Works
+
+1. Audio features of songs are scaled and clustered using **KMeans++**.  
+2. Each cluster is analyzed and labeled with a corresponding **mood**.  
+3. Users can interactively explore songs through the **Streamlit web app**, filtering by mood, singer, or popularity, and searching by song names.
+
+---
+
+## ⚡ Features
+
+- Mood-based song recommendations
+- Song filtering and sorting
+- Partial match search for song names
+- Support for future multi-language datasets
+
+---
+
+## 🧠 Key Learnings
+
+- KMeans++ is efficient and interpretable for audio clustering  
+- Standardization & feature selection impact clustering quality  
+- Clustering allows mapping songs to moods without labeled data  
+- Frontend UX is crucial: clear mood labels, song titles, and filtering options improve usability
+   
+---
+
+## 📌 Future Enhancements
+
+- Add multi-language support with a unified UI  
+- Integrate Spotify API for real-time streaming & previews  
+- Store user mood selections to create personalized recommendations  
+
+---
+
+This repository enables a **music discovery experience driven by emotion**, rather than genre or user preferences.
